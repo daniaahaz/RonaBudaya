@@ -161,7 +161,11 @@
                 <a href="{{ url('/#about') }}">About</a>
                 <a href="{{ route('events.index') }}">Events</a>
                 <a href="{{ route('performers.index') }}">Performers</a>
-                <a href="{{ url('/#contact') }}">Contact</a>
+                @auth
+                    <a href="{{ route('contact.create') }}">Contact Us</a>
+                @else
+                    <a href="{{ url('/#contact') }}">Contact</a>
+                @endauth
 
                 @guest
                     <a href="{{ route('login') }}">Login</a>

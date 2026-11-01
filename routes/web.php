@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\PerformerInfoController;
 use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactMessageController;
 
 Route::get('/', function () {
     return view('home');
@@ -55,6 +56,14 @@ Route::get('/performers/{performer}', [PerformerInfoController::class, 'show'])-
 
 
 Route::middleware('auth')->group(function () {
+
+    // Contact form
+    Route::get('/contact', [ContactMessageController::class, 'create'])
+        ->name('contact.create');
+
+    Route::post('/contact', [ContactMessageController::class, 'store'])
+        ->name('contact.store');
+        
     // View user's bookings
     Route::get('/bookings', [BookingController::class, 'index'])
         ->name('bookings.index');
