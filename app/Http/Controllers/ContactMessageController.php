@@ -30,7 +30,7 @@ class ContactMessageController extends Controller
             'ContactMessage' => $validated['ContactMessage'],
         ]);
 
-        return redirect('/')
+        return redirect()->route('contact.create')
             ->with('success', 'Your message has been submitted successfully.');
     }
 }
