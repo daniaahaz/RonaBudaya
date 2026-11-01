@@ -51,7 +51,7 @@
         }
 
         .heading h1 {
-            font-family: Georgia, serif;
+            font-family: Arial, sans-serif;
             color: #6b2737;
             margin-bottom: 10px;
         }
