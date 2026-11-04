@@ -97,7 +97,6 @@ class BookingController extends Controller
         return view('bookings.edit', compact('booking'));
     }
 
-
     /**
     * Update an existing booking.
     */
